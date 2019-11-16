@@ -84,7 +84,7 @@ $pages = array(
         "sidebar" => false,
         "file" => "una_casa_divisa.html",
         "css" => array(
-            "https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Diplomata+SC&display=swap"
+            "https://fonts.googleapis.com/css?family=Alegreya+SC:500|Diplomata+SC&display=swap"
         )
     ),
     "libri_del-49-cercatori-doro-altri-pionieri-california" => array(
