@@ -127,3 +127,53 @@ function check_if_in_view() {
 
 $window.on('scroll resize', check_if_in_view);
 //$window.trigger('scroll');
+
+//Load iframe faster on load
+function init() {
+	var vidDefer = document.getElementsByTagName('iframe');
+	for (var i=0; i<vidDefer.length; i++) {
+	if(vidDefer[i].getAttribute('data-src')) {
+	vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+	} } }
+	window.onload = init;
+
+	//Sticky sidebar
+   $(function() {
+	   var asideElement = "#text-3";
+	   var aniDuration = 100;
+	   var useAnimation = true;
+            var offset = $(asideElement).offset();
+            var topPadding = 15;
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > offset.top) {
+					if (useAnimation) {
+                    $(asideElement).stop().animate({
+                        marginTop: $(window).scrollTop() - offset.top + topPadding
+					}, aniDuration);
+				}
+				else {
+					$(asideElement).css("margin-top", ($(window).scrollTop() - offset.top + topPadding).toString() + "px");
+				}
+                } else {
+					if (useAnimation) {
+						$(asideElement).stop().animate({
+							marginTop: 0
+						}, aniDuration);
+					}
+					else {
+						$(asideElement).css("margin-top", "0px");
+					}
+                    
+					//
+                };
+            });
+		});
+		
+		//Facebook
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+			fjs.parentNode.insertBefore(js, fjs);
+		  }(document, 'script', 'facebook-jssdk'));

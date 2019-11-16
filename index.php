@@ -13,16 +13,22 @@ $addr = strtolower(htmlentities($_SERVER["SERVER_NAME"]));
 if ($addr == "libertybell.it" || $addr == "www.libertybell.it") {
     $google = <<<GOOGLE
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     
-        ga('create', 'UA-75047184-1', 'auto');
-        ga('send', 'pageview');
+    ga('create', 'UA-75047184-1', 'auto');
+    ga('send', 'pageview');
+    var trackOutboundLink = function(url) {
+        ga('send', 'event', 'outbound', 'click', url, {
+            'transport': 'beacon',
+            'hitCallback': function(){window.open(url, "_blank");}
+        });
+    }
 GOOGLE;
 }
 else {
-    $google = "var i;";
+    $google = "var i; var trackOutboundLink = function(url) {window.open(url, \"_blank\");}";
 }
 
 // # Page structures
@@ -71,8 +77,8 @@ $pages = array(
     // # LIBRI
     "libri_del-49-cercatori-doro-altri-pionieri-california" => array(
         "title" => "Noi del ‘49 - Cercatori d’oro e altri pionieri in California - Liberty Bell Edizioni",
-        "desc" => "",
-        "keywords" => "California, oro, cercatori d&#039;oro, west, storia, storia americana",
+        "desc" => "Luzena S. Wilson ci racconta del suo viaggio in California in occasione della corsa all’oro del 1849 e dei suoi primi anni da pioniera.",
+        "keywords" => "California, oro, cercatori d oro, west, storia, storia americana, viaggio in California, libro di memorie, oro della California",
         "google" => $google,
         "cover" => "tw-all-Luzena.jpg",
         "sidebar" => false,
@@ -83,8 +89,8 @@ $pages = array(
     ),
     "libri_incantevole-estate-in-montana" => array(
         "title" => "Un’incantevole estate in Montana - Liberty Bell Edizioni",
-        "desc" => "",
-        "keywords" => "romanzo, storia d amore, Montana, Bower, West",
+        "desc" => "Miss Beatrice Lansell, una ragazza dell’alta società di New York, va a trascorrere l’estate presso il ranch del fratello in Montana. Una storia romantica del vecchio West.",
+        "keywords" => "una storia romantica, romanzo, storia d amore, Montana, Bower, West, vecchio West, Montana ranch, Amazon Kindle, vita di pascoli, la ragazza del West",
         "google" => $google,
         "cover" => "tw-all-Bower.jpg",
         "sidebar" => false,
@@ -93,10 +99,22 @@ $pages = array(
             "https://fonts.googleapis.com/css?family=Berkshire+Swash|Lovers+Quarrel|Rouge+Script"
         )
     ),
+    "libri_americani-nella-grande-guerra" => array(
+        "title" => "Americani nella Grande Guerra - Liberty Bell Edizioni",
+        "desc" => "Dopo un iniziale periodo di neutralità, il 6 aprile 1917 gli Stati Uniti si uniscono al conflitto che già da tre anni affliggeva l’Europa. “Il mondo deve essere reso sicuro ai fini della democrazia” invoca il presidente Woodrow Wilson, e così – non senza grandi divergenze all’interno della società e dell’ambiente politico – gli Stati Uniti scendono formalmente in guerra al fianco degli alleati.",
+        "keywords" => "grande guerra, prima guerra mondiale, roosevelt, americani nella prima guerra mondiale, america nella prima guerra mondiale, fronte occidentale, grande uno rosso, francia 1918",
+        "google" => $google,
+        "cover" => "tw-all-GrandeGuerra.jpg",
+        "sidebar" => false,
+        "file" => "grande_guerra.html",
+        "css" => array(
+            "https://fonts.googleapis.com/css?family=Anton"
+        )
+    ),
     "libri_un-cowboy-del-texas-quindici-anni-di-avventure-cavallo" => array(
         "title" => "Un cowboy del Texas - Quindici anni di avventure a cavallo - Liberty Bell Edizioni",
         "desc" => "Charles A. Siringo - cowboy texano di origine italiana per parte di padre - vive i momenti d’oro del selvaggio West, l’era dei cowboy.",
-        "keywords" => "Far West, cowboy, Billy the Kid, Texas, libro western, western, West",
+        "keywords" => "Far West, cowboy, Billy the Kid, Texas, libro western, western, West, storia del Texas, il selvaggio West, racconto di avventura, cowboy West",
         "google" => $google,
         "cover" => "tw-all-Siringo.jpg",
         "sidebar" => false,
@@ -106,9 +124,9 @@ $pages = array(
         )
     ),
     "libri_la-guerra-civile-americana-nelle-memorie-un-soldato-comune" => array(
-        "title" => "Liberty Bell Edizioni - Storia e cultura degli Stati Uniti",
+        "title" => "La Guerra Civile americana nelle memorie di un soldato comune - Liberty Bell Edizioni",
         "desc" => "La Guerra Civile americana nelle memorie di un soldato comune è il resoconto delle esperienze vissute in prima persona da Leander Stillwell. Sollecitato dal figlio più giovane, Stillwell scrive le proprie memorie nel 1916, a più di cinquant’anni dalla fine della guerra tra Nord e Sud",
-        "keywords" => "battaglia di shiloh, stillwell, guerra di secessione, guerra civile americana, storia americana",
+        "keywords" => "battaglia di shiloh, stillwell, guerra di secessione, guerra civile americana, storia americana, la guerra civile americana, libri di guerra",
         "google" => $google,
         "cover" => "tw-all-Stillwell.jpg",
         "sidebar" => false,
@@ -131,11 +149,41 @@ $pages = array(
     "blog_la-grande-gara-sul-mississippi" => array(
         "title" => "La Grande Gara sul Mississippi - Liberty Bell Edizioni",
         "desc" => "Il 30 giugno 1870 due piroscafi, il Robert E. Lee e il Natchez, si sfidano in un&#039;epica gara di velocità sul fiume Mississippi.",
-        "keywords" => "",
+        "keywords" => "piroscafi, Mississippi, gara, battelli a vapore, reconstruction, fiume Mississippi, piroscafi del Mississippi",
         "google" => $google,
         "cover" => "blog/LeeNatchez_cover.jpg",
         "sidebar" => true,
         "file" => "blog/lee_natchez.html",
+        "css" => array()
+    ),
+    "blog_la-bandiera-americana" => array(
+        "title" => "Un percorso a 10 tappe per la bandiera americana - Liberty Bell Edizioni",
+        "desc" => "Per festeggiare il bicentenario del terzo Flag Act, promulgato il 4 aprile 1818, ripercorriamo in 10 tappe la storia della bandiera a Stelle e Strisce",
+        "keywords" => "bandiera americana, stelle e strisce, Iwo Jima, bandiera stelle, bandiera Stati Uniti, Betsy Ross, bandiera USA",
+        "google" => $google,
+        "cover" => "blog/Flag_cover.png",
+        "sidebar" => true,
+        "file" => "blog/flag.html",
+        "css" => array()
+    ),
+    "blog_sergente-stubby" => array(
+        "title" => "Sergente Stubby - Liberty Bell Edizioni",
+        "desc" => "In occasione del centenario dall&#039;armistizio della Grande Guerra e dell&#039;uscita del nostro ultimo libro Americani nella Grande Guerra, vogliamo dedicare questo articolo a un eroe un po&#039; particolare della Grande Guerra, il sergente Stubby",
+        "keywords" => "sergente stubby, eroe grande guerra, eroe prima guerra mondiale, corpo di spedizione americano, cani in guerra, cani famosi",
+        "google" => $google,
+        "cover" => "blog/Stubby_cover.jpg",
+        "sidebar" => true,
+        "file" => "blog/stubby.html",
+        "css" => array()
+    ),
+    "blog_woodrow-wilson-in-italia" => array(
+        "title" => "Woodrow Wilson in Italia - Liberty Bell Edizioni",
+        "desc" => "Fra il 3 e il 6 gennaio 1919, dopo la fine della Grande Guerra, il presidente americano Woodrow Wilson, visita l&#039;Italia, a Roma, Genova, Milano e Torino.",
+        "keywords" => "woodrow wilson, documentario, italia, visita in italia, relazioni internazionali, fascismo, avvento del fascismo",
+        "google" => $google,
+        "cover" => "blog/wilson_cover.jpg",
+        "sidebar" => true,
+        "file" => "blog/wilson_in_italia.html",
         "css" => array()
     ),
     // # HOME E 404
@@ -235,14 +283,58 @@ else {
 echo $top;
 // # Top End
 
+$twitter_follow = <<<TWITTERFOLLOW
+<div class="textwidget"><a class="twitter-follow-button" href="https://twitter.com/LibertyBellEd" data-show-count="false" data-size="large">Follow @LibertyBellEd</a></div>
+TWITTERFOLLOW;
+
+$timeline_h = 380;
+
+$twitter_timeline = <<<TWITTERTIMELINE
+<div class="textwidget"><a class="twitter-timeline" href="https://twitter.com/LibertyBellEd" data-widget-id="727783934646472705" data-height="{$timeline_h}" data-chrome="nofooter noborders">Tweet di @LibertyBellEd</a></div>
+TWITTERTIMELINE;
+
+$facebook = <<<FACEBOOK
+<div class="fb-page" data-href="https://www.facebook.com/LibertyBellEd/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/LibertyBellEd/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/LibertyBellEd/">Liberty Bell Edizioni</a></blockquote></div>
+FACEBOOK;
+
+$mailchimp = <<<MAILCHIMP
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://libertybell.us16.list-manage.com/subscribe/post?u=38186b011274b1926b7d7cc5c&amp;id=72defa407f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Iscriviti alla nostra newsletter</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Indirizzo email" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_38186b011274b1926b7d7cc5c_72defa407f" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Iscriviti" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+MAILCHIMP;
+
+$mailerlite_h = 250;
+
+$mailerlite = <<<MAILERLITE
+<iframe src="" data-src="https://landing.mailerlite.com/webforms/landing/b9a9z2" style="border: none; width: 350px; height: {$mailerlite_h}px;"></iframe>
+MAILERLITE;
+
 include_once __DIR__ . "/assets/html/" . $array["file"];
 echo "</div><footer class=\"entry-footer\"></footer></article></main></div>";
 if ($array["sidebar"]) {
     echo <<<SIDEBAR
     <div id="secondary" class="widget-area col-lg-4 col-md-4 col-sm-4 col-xs-12" role="complementary">
-	<aside id="text-2" class="widget widget_text"><div class="textwidget"><a class="twitter-follow-button" href="https://twitter.com/LibertyBellEd" data-show-count="false" data-size="large">Follow @LibertyBellEd</a></div>
-		</aside><aside id="text-3" class="widget widget_text">			<div class="textwidget"><a class="twitter-timeline" href="https://twitter.com/LibertyBellEd" data-widget-id="727783934646472705">Tweet di @LibertyBellEd</a></div>
-		</aside></div><!-- #secondary -->
+    <aside id="text-3" class="widget widget_text">
+    {$twitter_timeline}
+    {$mailerlite}
+    </aside></div><!-- #secondary -->
 SIDEBAR;
 }
 $additional_css = "";
@@ -254,4 +346,4 @@ $bottom = file_get_contents("assets/common/bottom.html");
 $bottom = str_replace("{ADDITIONAL_IMPORTS}", $additional_css, $bottom);
 echo $bottom;
 //include_once("bottom.html");
- ?>
+?>

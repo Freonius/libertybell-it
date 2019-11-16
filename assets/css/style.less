@@ -20,6 +20,7 @@
 @pastel3: #f2a246;
 @pastel4: #f0561f;
 @pastel5: #db391b;
+@yellow-ted: #ff9f27;
 
 html {
     font-size: 1em;
@@ -586,7 +587,9 @@ a:active {
 
 figure {
     text-align: center;
-    width: 90%;
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .lb-blogimage {
@@ -674,4 +677,31 @@ hr {clear:both}
 
 nav {
     text-align: left;
+}
+
+// # Ted
+.ted-author, .ted-title {
+    text-align: right;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+.ted-author {
+    color: @yellow-ted;
+}
+
+.ted-title {
+    color: white;
+    font-size: 2em;
+}
+
+.ted-block {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    background-image: url("/bck/grandeguerra.jpg");
+    background-size: cover;
+    background-position: 75%;
+    background-color: #333;
+    margin-bottom: 1em;
 }

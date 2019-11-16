@@ -3,7 +3,7 @@
   <url>
     <loc>http://www.libertybell.it</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2018-02-11</lastmod>
+    <lastmod>2018-05-04</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
@@ -13,39 +13,45 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.libertybell.it/libri/americani-nella-grande-guerra/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2018-11-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>http://www.libertybell.it/libri/incantevole-estate-in-montana/</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2018-02-11</lastmod>
+    <lastmod>2018-05-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://www.libertybell.it/libri/del-49-cercatori-doro-altri-pionieri-california/</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2018-02-11</lastmod>
+    <lastmod>2018-05-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://www.libertybell.it/libri/un-cowboy-del-texas-quindici-anni-di-avventure-cavallo/</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2018-02-11</lastmod>
+    <lastmod>2018-05-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://www.libertybell.it/libri/la-guerra-civile-americana-nelle-memorie-un-soldato-comune/</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2018-02-11</lastmod>
+    <lastmod>2018-05-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://www.libertybell.it/contatti/</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2018-02-11</lastmod>
+    <lastmod>2018-04-04</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>http://www.libertybell.it/blog/</loc>
     <changefreq>weekly</changefreq>
-    <lastmod>2018-02-11</lastmod>
+    <lastmod>2018-04-04</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -59,5 +65,23 @@
     <changefreq>monthly</changefreq>
     <lastmod>2018-02-11</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>http://www.libertybell.it/blog/la-bandiera-americana/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2018-06-13</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>http://www.libertybell.it/blog/sergente-stubby/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2018-11-11</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>http://www.libertybell.it/blog/woodrow-wilson-in-italia/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2019-01-03</lastmod>
+    <priority>0.5</priority>
   </url>
 </urlset>
