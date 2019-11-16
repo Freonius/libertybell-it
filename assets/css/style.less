@@ -22,6 +22,24 @@
 @pastel5: #db391b;
 @yellow-ted: #ff9f27;
 
+@breakpoint-desktop: 1200px; //60% to 55
+@breakpoint-2: 995px; //55 to auto, ribbon width auto
+
+@media screen and (max-width: @breakpoint-desktop) {
+    .half-pricer {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: @breakpoint-2) {
+    .half-pricer {
+        width: auto;
+        .ribbon {
+            width: auto;
+        }
+    }
+}
+
 html {
     font-size: 1em;
 }
