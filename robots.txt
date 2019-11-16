@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /cookie-policy/
+Allow: /
+Sitemap: http://libertybell.it/sitemap.xml
