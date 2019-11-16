@@ -75,6 +75,18 @@ $pages = array(
         "css" => array()
     ),
     // # LIBRI
+    "libri_una-casa-divisa" => array(
+        "title" => "Una casa divisa - sottotitolo - Liberty Bell Edizioni",
+        "desc" => "",
+        "keywords" => "",
+        "google" => $google,
+        "cover" => "tw-all-Luzena.jpg",
+        "sidebar" => false,
+        "file" => "una_casa_divisa.html",
+        "css" => array(
+            "https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Diplomata+SC&display=swap"
+        )
+    ),
     "libri_del-49-cercatori-doro-altri-pionieri-california" => array(
         "title" => "Noi del ‘49 - Cercatori d’oro e altri pionieri in California - Liberty Bell Edizioni",
         "desc" => "Luzena S. Wilson ci racconta del suo viaggio in California in occasione della corsa all’oro del 1849 e dei suoi primi anni da pioniera.",
