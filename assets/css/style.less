@@ -24,6 +24,7 @@
 
 @breakpoint-desktop: 1200px; //60% to 55
 @breakpoint-2: 995px; //55 to auto, ribbon width auto
+@breakpoint-3: 745px;
 
 @media screen and (max-width: @breakpoint-desktop) {
     .half-pricer {
@@ -36,6 +37,21 @@
         width: auto;
         .ribbon {
             width: auto;
+        }
+    }
+}
+@media screen and (max-width: @breakpoint-3) {
+    .half-pricer {
+        float: none;
+        .ribbon {
+            margin: 1em;
+        }
+    }
+    .bk-cv {
+        width: auto;
+        float: none;
+        .cov {
+            float: none;
         }
     }
 }
