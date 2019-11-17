@@ -76,11 +76,11 @@ $pages = array(
     ),
     // # LIBRI
     "libri_una-casa-divisa" => array(
-        "title" => "Una casa divisa - sottotitolo - Liberty Bell Edizioni",
+        "title" => "Una casa divisa - Cinque racconti sulla Guerra Civile americana - Liberty Bell Edizioni",
         "desc" => "",
         "keywords" => "",
         "google" => $google,
-        "cover" => "tw-all-Luzena.jpg",
+        "cover" => "tw-all-Una_casa_divisa.jpg",
         "sidebar" => false,
         "file" => "una_casa_divisa.html",
         "css" => array(
