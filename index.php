@@ -255,7 +255,7 @@ else {
     $array["robots"] = "follow,index,noodp";
 }
 $christmas = false;
-$bcks = array("bck1", "bck2", "bck4", "bck5", "bck6", "bck7", "bck10");
+$bcks = array("bck1", "bck2", "bck4", "bck5", "bck6", "bck7", "bck10", "bck11", "bck12");
 if ($christmas) {
     $bcks = array("bck10");
 }
