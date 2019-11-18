@@ -77,8 +77,8 @@ $pages = array(
     // # LIBRI
     "libri_una-casa-divisa" => array(
         "title" => "Una casa divisa - Cinque racconti sulla Guerra Civile americana - Liberty Bell Edizioni",
-        "desc" => "",
-        "keywords" => "",
+        "desc" => "Una raccolta di cinque racconti di grandi autori - Henry James, Mark Twain, Louisa May Alcott, Willa Cather, Charles W. Chesnutt - che offre uno spunto di riflessione sull’evento storico più tragico e determinante della storia americana: la Guerra Civile",
+        "keywords" => "racconti, guerra civile americana, classici, short stories, henry james, mark twain, louisa may alcott, willa cather, charles w chesnutt",
         "google" => $google,
         "cover" => "tw-all-Una_casa_divisa.jpg",
         "sidebar" => false,
