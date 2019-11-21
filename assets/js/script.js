@@ -1,3 +1,23 @@
+// Lazy loader for images
+const lazyLoad = (selector) => {
+	let els = null;
+	if (className.startsWith(".")) {
+		els = document.getElementsByClassName(selector);
+	}
+	else {
+		els = document.getElementsByTagName(selector);
+	}
+	if (!els) {
+		return;
+	}
+	for (let i = 0; i < els.length; i++) {
+		if (els[i].hasAttribute("data-src")) {
+			let src = els[i].getAttribute("data-src");
+			els[i].setAttribute("src", src);
+		}
+	}
+}
+
 /**
  * navigation.js
  *
@@ -130,11 +150,9 @@ $window.on('scroll resize', check_if_in_view);
 
 //Load iframe faster on load
 function init() {
-	var vidDefer = document.getElementsByTagName('iframe');
-	for (var i=0; i<vidDefer.length; i++) {
-	if(vidDefer[i].getAttribute('data-src')) {
-	vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
-	} } }
+	lazyLoad("iframe");
+	lazyLoad(".lazy");
+}
 	window.onload = init;
 
 	//Sticky sidebar
@@ -169,11 +187,14 @@ function init() {
             });
 		});
 		
-		//Facebook
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
-			fjs.parentNode.insertBefore(js, fjs);
-		  }(document, 'script', 'facebook-jssdk'));
+//Facebook
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+
+// Okay, didn't know it was this mess of a file, have to work on this
