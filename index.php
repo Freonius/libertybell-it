@@ -96,7 +96,7 @@ $pages = array(
         "sidebar" => false,
         "file" => "noi_del_49.html",
         "css" => array(
-            "https://fonts.googleapis.com/css?family=Arizonia|Diplomata"
+            "https://fonts.googleapis.com/css?family=Arizonia|Diplomata&display=swap"
         )
     ),
     "libri_incantevole-estate-in-montana" => array(
@@ -108,7 +108,7 @@ $pages = array(
         "sidebar" => false,
         "file" => "estate_in_montana.html",
         "css" => array(
-            "https://fonts.googleapis.com/css?family=Berkshire+Swash|Lovers+Quarrel|Rouge+Script"
+            "https://fonts.googleapis.com/css?family=Berkshire+Swash|Lovers+Quarrel|Rouge+Script&display=swap"
         )
     ),
     "libri_americani-nella-grande-guerra" => array(
@@ -120,7 +120,7 @@ $pages = array(
         "sidebar" => false,
         "file" => "grande_guerra.html",
         "css" => array(
-            "https://fonts.googleapis.com/css?family=Anton"
+            "https://fonts.googleapis.com/css?family=Anton&display=swap"
         )
     ),
     "libri_un-cowboy-del-texas-quindici-anni-di-avventure-cavallo" => array(
@@ -132,7 +132,7 @@ $pages = array(
         "sidebar" => false,
         "file" => "un_cowboy_del_texas.html",
         "css" => array(
-            "https://fonts.googleapis.com/css?family=Luckiest+Guy"
+            "https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap"
         )
     ),
     "libri_la-guerra-civile-americana-nelle-memorie-un-soldato-comune" => array(
@@ -144,7 +144,7 @@ $pages = array(
         "sidebar" => false,
         "file" => "guerra_civile_americana.html",
         "css" => array(
-            "https://fonts.googleapis.com/css?family=Buenard"
+            "https://fonts.googleapis.com/css?family=Buenard&display=swap"
         )
     ),
     // # BLOG
