@@ -164,7 +164,7 @@ function init() {
 	lazyLoad(".lazy");
 }
 window.onload = init;
-try {
+
 	//Sticky sidebar
    $(function() {
 	   var asideElement = "#text-3";
@@ -173,6 +173,7 @@ try {
             var offset = $(asideElement).offset();
             var topPadding = 15;
             $(window).scroll(function() {
+				try {
                 if ($(window).scrollTop() > offset.top) {
 					if (useAnimation) {
                     $(asideElement).stop().animate({
@@ -193,12 +194,13 @@ try {
 					}
                     
 					//
-                };
-            });
+				};
+			} catch (error) {
+					
+			}
+			});
 		});
-} catch (error) {
-	console.log(error);
-}	
+
 //Facebook
 (function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
