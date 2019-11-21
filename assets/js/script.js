@@ -13,7 +13,12 @@ const lazyLoad = (selector) => {
 	for (let i = 0; i < els.length; i++) {
 		if (els[i].hasAttribute("data-src")) {
 			let src = els[i].getAttribute("data-src");
-			els[i].setAttribute("src", src);
+			if (els[i].classList.contains("set")) {
+				els[i].setAttribute("srcset", src);
+			}
+			else {
+				els[i].setAttribute("src", src);
+			}
 		}
 	}
 }
