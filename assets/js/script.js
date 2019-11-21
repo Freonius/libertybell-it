@@ -109,13 +109,14 @@ try {
 }
 
 // OnLoad
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
+//document.addEventListener("DOMContentLoaded", () => {
 	// Lazy load the images and the iframes
 	lazyLoad("iframe");
 	lazyLoad(".lazy");
 
 	// Nav
-	$('#menu').slicknav();
+	$("#menu").slicknav();
 	menuMaker();
 });
 
