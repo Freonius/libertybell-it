@@ -17,20 +17,23 @@ p {
     border: 1px solid transparent;
 }
 
+@breakpoint-bs1: 1200px;
+@breakpoint-bs2: 992px;
+@breakpoint-bs3: 768px;
 
-@media (min-width: 1200px) {
+@media (min-width: @breakpoint-bs1) {
     .container {
         width: 1170px;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: @breakpoint-bs2) and (max-width: @breakpoint-bs1 - 1px) {
     .container {
         width: 970px;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: @breakpoint-bs3) and (max-width: @breakpoint-bs2 - 1px) {
     .container {
         width: 750px;
     }
