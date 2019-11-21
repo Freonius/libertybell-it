@@ -31,7 +31,8 @@ const lazyLoad = (selector) => {
  * support for dropdown menus.
  */
 $(function(){
-    $('#menu').slicknav();
+	document.getElementById("#menu").slicknav();
+    //$('#menu').slicknav();
 });
 
 ( function() {
@@ -156,50 +157,46 @@ try {
 	console.log(error);
 }
 
-//$window.trigger('scroll');
-
-//Load iframe faster on load
-function init() {
+// OnLoad
+document.addEventListener("DOMContentLoaded", () => {
+	// Lazy load the images and the iframes
 	lazyLoad("iframe");
 	lazyLoad(".lazy");
-}
-window.onload = init;
+});
 
-	//Sticky sidebar
-   $(function() {
-	   var asideElement = "#text-3";
-	   var aniDuration = 100;
-	   var useAnimation = true;
-            var offset = $(asideElement).offset();
-            var topPadding = 15;
-            $(window).scroll(function() {
-				try {
-                if ($(window).scrollTop() > offset.top) {
-					if (useAnimation) {
-                    $(asideElement).stop().animate({
-                        marginTop: $(window).scrollTop() - offset.top + topPadding
-					}, aniDuration);
-				}
-				else {
-					$(asideElement).css("margin-top", ($(window).scrollTop() - offset.top + topPadding).toString() + "px");
-				}
-                } else {
-					if (useAnimation) {
-						$(asideElement).stop().animate({
-							marginTop: 0
-						}, aniDuration);
-					}
-					else {
-						$(asideElement).css("margin-top", "0px");
-					}
-                    
-					//
-				};
-			} catch (error) {
-					
+//Sticky sidebar
+$(function() {
+var asideElement = "#text-3";
+var aniDuration = 100;
+var useAnimation = true;
+	var offset = $(asideElement).offset();
+	var topPadding = 15;
+	$(window).scroll(function() {
+		try {
+		if ($(window).scrollTop() > offset.top) {
+			if (useAnimation) {
+			$(asideElement).stop().animate({
+				marginTop: $(window).scrollTop() - offset.top + topPadding
+			}, aniDuration);
+		}
+		else {
+			$(asideElement).css("margin-top", ($(window).scrollTop() - offset.top + topPadding).toString() + "px");
+		}
+		} else {
+			if (useAnimation) {
+				$(asideElement).stop().animate({
+					marginTop: 0
+				}, aniDuration);
 			}
-			});
-		});
+			else {
+				$(asideElement).css("margin-top", "0px");
+			}
+		};
+	} catch (error) {
+			
+	}
+	});
+});
 
 //Facebook
 (function(d, s, id) {
