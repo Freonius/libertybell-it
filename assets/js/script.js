@@ -1,3 +1,5 @@
+console.log("1.1");
+
 // Lazy loader for images
 const lazyLoad = (selector) => {
 	let els = null;
@@ -63,6 +65,16 @@ const menuMaker = () => {
 	}
 };
 
+const init = () => {
+	// Lazy load the images and the iframes
+	lazyLoad("iframe");
+	lazyLoad(".lazy");
+
+	// Nav
+	$("#menu").slicknav();
+	menuMaker();
+};
+
 // Slide in animation
 
 var $animation_elements = $('.animation-element');
@@ -109,16 +121,7 @@ try {
 }
 
 // OnLoad
-window.onload = () => {
-//document.addEventListener("DOMContentLoaded", () => {
-	// Lazy load the images and the iframes
-	lazyLoad("iframe");
-	lazyLoad(".lazy");
-
-	// Nav
-	$("#menu").slicknav();
-	menuMaker();
-};
+window.onload = init;
 
 //Sticky sidebar
 $(function() {
