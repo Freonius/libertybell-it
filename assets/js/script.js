@@ -149,8 +149,12 @@ function check_if_in_view() {
    }
   });
 }
+try {
+	$window.on('scroll resize', check_if_in_view);
+} catch (error) {
+	console.log(error);
+}
 
-$window.on('scroll resize', check_if_in_view);
 //$window.trigger('scroll');
 
 //Load iframe faster on load
@@ -158,7 +162,7 @@ function init() {
 	lazyLoad("iframe");
 	lazyLoad(".lazy");
 }
-	window.onload = init;
+window.onload = init;
 try {
 	//Sticky sidebar
    $(function() {
