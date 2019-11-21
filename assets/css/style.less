@@ -26,6 +26,7 @@
 @breakpoint-desktop: 1200px; //60% to 55
 @breakpoint-2: 995px; //55 to auto, ribbon width auto
 @breakpoint-3: 745px;
+@breakpoint-iphone: 350px;
 
 footer {
     a,
@@ -50,6 +51,7 @@ footer {
         }
     }
 }
+
 @media screen and (max-width: @breakpoint-3) {
     .half-pricer {
         float: none;
@@ -64,6 +66,12 @@ footer {
             float: none;
             margin: auto;
         }
+    }
+}
+
+@media screen and (max-width: @breakpoint-iphone) {
+    .cov {
+        width: 100%;
     }
 }
 
