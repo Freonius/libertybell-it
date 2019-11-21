@@ -2,6 +2,7 @@
 const lazyLoad = (selector) => {
 	let els = null;
 	if (selector.startsWith(".")) {
+		selector = selector.replace(".", "");
 		els = document.getElementsByClassName(selector);
 	}
 	else {
