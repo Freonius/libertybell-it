@@ -31,7 +31,7 @@ const lazyLoad = (selector) => {
  * support for dropdown menus.
  */
 $(function(){
-	document.getElementById("#menu").slicknav();
+	document.getElementById("menu").slicknav();
     //$('#menu').slicknav();
 });
 
