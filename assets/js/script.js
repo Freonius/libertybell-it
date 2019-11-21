@@ -121,8 +121,10 @@ try {
 }
 
 // OnLoad
-window.onload = init;
-
+//window.onload = init;
+document.addEventListener("DOMContentLoaded", () => {
+	init();
+});
 //Sticky sidebar
 $(function() {
 var asideElement = "#text-3";
