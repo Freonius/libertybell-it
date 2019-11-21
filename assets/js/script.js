@@ -1,7 +1,7 @@
 // Lazy loader for images
 const lazyLoad = (selector) => {
 	let els = null;
-	if (className.startsWith(".")) {
+	if (selector.startsWith(".")) {
 		els = document.getElementsByClassName(selector);
 	}
 	else {
