@@ -159,7 +159,7 @@ function init() {
 	lazyLoad(".lazy");
 }
 	window.onload = init;
-
+try {
 	//Sticky sidebar
    $(function() {
 	   var asideElement = "#text-3";
@@ -191,7 +191,9 @@ function init() {
                 };
             });
 		});
-		
+} catch (error) {
+	console.log(error);
+}	
 //Facebook
 (function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
