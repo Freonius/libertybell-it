@@ -118,7 +118,7 @@ window.onload = () => {
 	// Nav
 	$("#menu").slicknav();
 	menuMaker();
-});
+};
 
 //Sticky sidebar
 $(function() {
