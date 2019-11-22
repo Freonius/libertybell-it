@@ -108,43 +108,55 @@ const getTotalHeight = () => {
                        html.clientHeight, html.scrollHeight, html.offsetHeight);
 };
 
-// OnLoad
-$(document).ready(() => {
-	// Lazy load the images and the iframes
-	lazyLoad("iframe");
-	lazyLoad(".lazy");
-
-	// Nav
-	$("#menu").slicknav();
-	menuMaker();
-
-	// Slide in animation for book
-	$(window).on("scroll resize", checkIfInView);
-
-	getTotalHeight();
-	console.log(window.height);
-});
-
 const stickySidebar = (id, aniDuration = 100) => {
 	let useAnimation = aniDuration > 0;	// If the duration is 0, don't use animation
 	let topPadding = 15;
-	let elementHeight = 0;
+	let maxMargin = window.height;
+	let offset = $(id).offset();
+	let topPadding = 15;
 	try {
 		let footerHeight = $("footer")[0].outerHeight();
-		elementHeight = $(id).outerHeight();
+		let elementHeight = $(id).outerHeight();
+		maxMargin = window.height - footerHeight - elementHeight - topPadding - 10;
 	} catch (exception) {
 		// ignore
 	}
-	
+
+	const checkMax = () => {
+		return ($(window).scrollTop() - offset.top + topPadding) <= maxMargin; 
+	};
+
+	$(window).scroll(function() {
+		console.log(checkMax());
+		if ($(window).scrollTop() > offset.top || checkMax()) {
+			if (useAnimation) {
+				$(id).stop().animate({
+					marginTop: $(window).scrollTop() - offset.top + topPadding
+				}, aniDuration);
+			}
+			else {
+				$(id).css("margin-top", ($(window).scrollTop() - offset.top + topPadding).toString() + "px");
+			}
+		}
+		else {
+			if (id) {
+				$(id).stop().animate({
+					marginTop: 0
+				}, aniDuration);
+			}
+			else {
+				$(id).css("margin-top", "0px");
+			}
+		};
+	});
 };
 
 //Sticky sidebar
-$(function() {
+/*$(function() {
 var asideElement = "#text-3";
 var aniDuration = 100;
 var useAnimation = true;
 	var offset = $(asideElement).offset();
-	console.log(offset.top);
 	var topPadding = 15;
 	$(window).scroll(function() {
 		try {
@@ -171,7 +183,7 @@ var useAnimation = true;
 			
 	}
 	});
-});
+});*/
 
 //Facebook
 (function(d, s, id) {
@@ -184,3 +196,20 @@ var useAnimation = true;
 
 
 // Okay, didn't know it was this mess of a file, have to work on this
+// OnLoad
+$(document).ready(() => {
+	// Lazy load the images and the iframes
+	lazyLoad("iframe");
+	lazyLoad(".lazy");
+
+	// Nav
+	$("#menu").slicknav();
+	menuMaker();
+
+	// Slide in animation for book
+	$(window).on("scroll resize", checkIfInView);
+
+	getTotalHeight();
+	console.log(window.height);
+	stickySidebar("#text-3");
+});
