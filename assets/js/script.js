@@ -123,7 +123,7 @@ const stickySidebar = (id, mainContentId, aniDuration = 100) => {
 
 	let offset = $(id).offset();
 	const calcMaxMargin = () => {
-		if ($(window).width() < mobileBreakpoint) {
+		if (window.innerWidth <= mobileBreakpoint) {
 			maxMargin = 0;
 			return;
 		}
