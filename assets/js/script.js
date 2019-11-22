@@ -108,16 +108,16 @@ const getTotalHeight = () => {
                        html.clientHeight, html.scrollHeight, html.offsetHeight);
 };
 
-const stickySidebar = (id, aniDuration = 100) => {
+const stickySidebar = (id, footerId, aniDuration = 100) => {
 	let useAnimation = aniDuration > 0;	// If the duration is 0, don't use animation
 	let topPadding = 15;
 	let maxMargin = window.height;
 	let offset = $(id).offset();
 	try {
-		let footerHeight = $("footer")[0].outerHeight;
-		console.log(footerHeight);
+		let footerHeight = $(footerId).outerHeight;
+		console.log(`Footer height: ${footerHeight}`);
 		let elementHeight = $(id).outerHeight;
-		console.log(elementHeight);
+		console.log(`Element height: ${elementHeight}`);
 		maxMargin = window.height - footerHeight - elementHeight - topPadding - 10;
 	} catch (exception) {
 		console.log(exception);
@@ -213,5 +213,5 @@ $(document).ready(() => {
 
 	getTotalHeight();
 	console.log(window.height);
-	stickySidebar("#text-3");
+	stickySidebar("#text-3", "#colophon");
 });
