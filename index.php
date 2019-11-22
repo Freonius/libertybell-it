@@ -302,7 +302,7 @@ TWITTERFOLLOW;
 $timeline_h = 380;
 
 $twitter_timeline = <<<TWITTERTIMELINE
-<div class="textwidget"><a class="twitter-timeline" href="https://twitter.com/LibertyBellEd" data-widget-id="727783934646472705" data-height="{$timeline_h}" data-chrome="nofooter noborders">Tweet di @LibertyBellEd</a></div>
+<a class="twitter-timeline" data-lang="it" data-height="{$timeline_h}" href="https://twitter.com/LibertyBellEd?ref_src=twsrc%5Etfw">Tweets by LibertyBellEd</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 TWITTERTIMELINE;
 
 $facebook = <<<FACEBOOK
@@ -335,7 +335,7 @@ MAILCHIMP;
 $mailerlite_h = 250;
 
 $mailerlite = <<<MAILERLITE
-<iframe src="" data-src="https://landing.mailerlite.com/webforms/landing/b9a9z2" style="border: none; width: 350px; height: {$mailerlite_h}px;"></iframe>
+<iframe src="" data-src="https://landing.mailerlite.com/webforms/landing/b9a9z2" style="border: none; width: 100%; height: {$mailerlite_h}px;"></iframe>
 MAILERLITE;
 
 include_once __DIR__ . "/assets/html/" . $array["file"];
