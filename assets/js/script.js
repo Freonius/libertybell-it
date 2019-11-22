@@ -114,8 +114,12 @@ const stickySidebar = (id, mainContentId, aniDuration = 100) => {
 	let useAnimation = aniDuration > 0;	// If the duration is 0, don't use animation
 	let topPadding = 15;
 	let maxMargin = 0;
-	let offset = $(id).offset();
 
+	if (!$(id).length) {
+		return; // Sidebar does not exist
+	}
+
+	let offset = $(id).offset();
 	const calcMaxMargin = () => {
 		let elementHeight = $(id).innerHeight();
 		let mainHeight = $(mainContentId).innerHeight();
@@ -147,7 +151,7 @@ const stickySidebar = (id, mainContentId, aniDuration = 100) => {
 			}
 		}
 		else {
-			if (id) {
+			if (useAnimation) {
 				$(id).stop().animate({
 					marginTop: 0
 				}, aniDuration);
