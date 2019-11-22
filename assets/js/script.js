@@ -113,7 +113,6 @@ const stickySidebar = (id, aniDuration = 100) => {
 	let topPadding = 15;
 	let maxMargin = window.height;
 	let offset = $(id).offset();
-	let topPadding = 15;
 	try {
 		let footerHeight = $("footer")[0].outerHeight();
 		let elementHeight = $(id).outerHeight();
