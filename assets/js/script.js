@@ -1,4 +1,4 @@
-console.log("1.1");
+console.log("1.1.1");
 
 // Lazy loader for images
 const lazyLoad = (selector) => {
@@ -121,10 +121,8 @@ try {
 }
 
 // OnLoad
-//window.onload = init;
-document.addEventListener("DOMContentLoaded", () => {
-	init();
-});
+window.onload = init;
+
 //Sticky sidebar
 $(function() {
 var asideElement = "#text-3";
