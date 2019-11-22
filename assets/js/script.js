@@ -66,7 +66,7 @@ const menuMaker = () => {
 // Slide in animation
 const checkIfInView = () => {
 	let prev_pos = 0;
-	let animation_elements = document.getElementsByClassName("animation-element");
+	let animation_elements = $(".animation-element");
 	let window_height = $(window).height();
 	let window_top_position = $(window).scrollTop();
 	let window_bottom_position = (window_top_position + window_height);
