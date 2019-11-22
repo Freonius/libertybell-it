@@ -115,7 +115,9 @@ const stickySidebar = (id, aniDuration = 100) => {
 	let offset = $(id).offset();
 	try {
 		let footerHeight = $("footer")[0].outerHeight;
+		console.log(footerHeight);
 		let elementHeight = $(id).outerHeight;
+		console.log(elementHeight);
 		maxMargin = window.height - footerHeight - elementHeight - topPadding - 10;
 	} catch (exception) {
 		console.log(exception);
@@ -127,7 +129,8 @@ const stickySidebar = (id, aniDuration = 100) => {
 
 	$(window).scroll(function() {
 		console.log(checkMax());
-		if ($(window).scrollTop() > offset.top || checkMax()) {
+		console.log(`Max margin: ${maxMargin}`);
+		if ($(window).scrollTop() > offset.top && checkMax()) {
 			if (useAnimation) {
 				$(id).stop().animate({
 					marginTop: $(window).scrollTop() - offset.top + topPadding
