@@ -64,9 +64,9 @@ const menuMaker = () => {
 };
 
 // Slide in animation
-const check_if_in_view = () => {
+const checkIfInView = () => {
 	let prev_pos = 0;
-	let animation_elements = document.getElementsByClassName(".animation-element");
+	let animation_elements = document.getElementsByClassName("animation-element");
 	let window_height = $(window).height();
 	let window_top_position = $(window).scrollTop();
 	let window_bottom_position = (window_top_position + window_height);
@@ -119,7 +119,7 @@ $(document).ready(() => {
 	menuMaker();
 
 	// Slide in animation for book
-	$(window).on('scroll resize', check_if_in_view);
+	$(window).on("scroll resize", checkIfInView);
 
 	getTotalHeight();
 	console.log(window.height);
