@@ -64,49 +64,49 @@ const menuMaker = () => {
 };
 
 // Slide in animation
+const check_if_in_view = () => {
+	let prev_pos = 0;
+	let animation_elements = document.getElementsByClassName(".animation-element");
+	let window_height = $(window).height();
+	let window_top_position = $(window).scrollTop();
+	let window_bottom_position = (window_top_position + window_height);
+	let scrolling_down = false;
+	if (window_top_position > prev_pos) {
+		scrolling_down = true;
+	}
 
-var $animation_elements = $('.animation-element');
-var $window = $(window);
-var prev_pos = 0;
-function check_if_in_view() {
-  var window_height = $window.height();
-  //window_height = screen.height;
-  var window_top_position = $window.scrollTop();
-  var window_bottom_position = (window_top_position + window_height);
-  var scrolling_down = false;
-  if (window_top_position > prev_pos) {
-    scrolling_down = true;
+	prev_pos = window_top_position;
+	let i = 0;
+    $.each(animation_elements, () => {
+		i++;
+		let $element = $(this);
+		let element_height = $element.outerHeight();
 
-  }
+		let element_top_position = $element.offset().top;
 
-  prev_pos = window_top_position;
-  var i = 0;
-  $.each($animation_elements, function() {
-    i++;
-    var $element = $(this);
-    var element_height = $element.outerHeight();
-    
-    var element_top_position = $element.offset().top;
+		let element_bottom_position = (element_top_position + (element_height * 0.7));
+		let inV = (window_bottom_position > (element_top_position + (element_height * 0.3))
+			&&
+			window_top_position < element_bottom_position);
+		element_top_position += (element_height * 0.3);
 
-    var element_bottom_position = (element_top_position + (element_height * 0.7));
-    var inV = (window_bottom_position > (element_top_position + (element_height * 0.3))
-      &&
-      window_top_position < element_bottom_position);
-    element_top_position += (element_height * 0.3);
+		if (inV) {
+			$element.addClass("in-view");
+		}
+		else {
+			$element.removeClass("in-view");
+		}
+	});
+};
 
-   if (inV) {
-     $element.addClass("in-view");
-   }
-   else {
-     $element.removeClass("in-view");
-   }
-  });
-}
-try {
-	$window.on('scroll resize', check_if_in_view);
-} catch (error) {
-	console.log(error);
-}
+const getTotalHeight = () => {
+	let body = document.body;
+    let html = document.documentElement;
+
+	// Declared as global
+	window.height = Math.max(body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight);
+};
 
 // OnLoad
 $(document).ready(() => {
@@ -117,7 +117,17 @@ $(document).ready(() => {
 	// Nav
 	$("#menu").slicknav();
 	menuMaker();
+
+	// Slide in animation for book
+	$(window).on('scroll resize', check_if_in_view);
+
+	getTotalHeight();
+	console.log(window.height);
 });
+
+const stickySidebar = (id, aniDuration = 100) => {
+	let useAnimation = aniDuration > 0;	// If the duration is 0, don't use animation
+};
 
 //Sticky sidebar
 $(function() {
