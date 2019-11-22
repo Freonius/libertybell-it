@@ -110,6 +110,8 @@ const getTotalHeight = () => {
                        html.clientHeight, html.scrollHeight, html.offsetHeight);
 };
 
+const mobileBreakpoint = 768;
+
 const stickySidebar = (id, mainContentId, aniDuration = 100) => {
 	let useAnimation = aniDuration > 0;	// If the duration is 0, don't use animation
 	let topPadding = 15;
@@ -121,6 +123,10 @@ const stickySidebar = (id, mainContentId, aniDuration = 100) => {
 
 	let offset = $(id).offset();
 	const calcMaxMargin = () => {
+		if ($(window).width() < mobileBreakpoint) {
+			maxMargin = 0;
+			return;
+		}
 		let elementHeight = $(id).innerHeight();
 		let mainHeight = $(mainContentId).innerHeight();
 		maxMargin = mainHeight - elementHeight - topPadding;
