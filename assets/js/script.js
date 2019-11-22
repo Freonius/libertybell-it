@@ -117,10 +117,10 @@ const stickySidebar = (id, footerId, aniDuration = 100) => {
 	const calcMaxMargin = () => {
 		let elementHeight = $(id).innerHeight();
 		let mainHeight = $(footerId).innerHeight();
-		maxMargin = mainHeight - (elementHeight * 1.25) - topPadding - 100;
+		maxMargin = mainHeight - elementHeight - topPadding - 100 - screen.height;
 	};
 	calcMaxMargin();	// ensure it's called at least once
-	$(window).on("resize", calcMaxMargin);
+	$(window).on("scroll resize", calcMaxMargin);
 
 	const checkMax = () => {
 		return ($(window).scrollTop() - offset.top + topPadding) <= maxMargin; 
