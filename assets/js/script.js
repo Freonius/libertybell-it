@@ -124,20 +124,27 @@ const stickySidebar = (id, footerId, aniDuration = 100) => {
 	}
 
 	const checkMax = () => {
-		return ($(window).scrollTop()) <= maxMargin; 
+		return ($(window).scrollTop() - offset.top + topPadding) <= maxMargin; 
 	};
 
 	$(window).scroll(function() {
 		console.log(checkMax());
 		console.log(`Max margin: ${maxMargin}`);
 		if ($(window).scrollTop() > offset.top && checkMax()) {
+			let margin = 0;
+			if (checkMax()) {
+				margin = $(window).scrollTop() - offset.top + topPadding;
+			}
+			else {
+				margin = maxMargin;
+			}
 			if (useAnimation) {
 				$(id).stop().animate({
-					marginTop: $(window).scrollTop() - offset.top + topPadding
+					marginTop: margin
 				}, aniDuration);
 			}
 			else {
-				$(id).css("margin-top", ($(window).scrollTop() - offset.top + topPadding).toString() + "px");
+				$(id).css("margin-top", (margin).toString() + "px");
 			}
 		}
 		else {
