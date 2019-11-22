@@ -77,7 +77,7 @@ const checkIfInView = () => {
 
 	prev_pos = window_top_position;
 	let i = 0;
-    $.each(animation_elements, () => {
+    $.each(animation_elements, function() {
 		i++;
 		let $element = $(this);
 		let element_height = $element.outerHeight();
@@ -127,6 +127,15 @@ $(document).ready(() => {
 
 const stickySidebar = (id, aniDuration = 100) => {
 	let useAnimation = aniDuration > 0;	// If the duration is 0, don't use animation
+	let topPadding = 15;
+	let elementHeight = 0;
+	try {
+		let footerHeight = $("footer")[0].outerHeight();
+		elementHeight = $(id).outerHeight();
+	} catch (exception) {
+		// ignore
+	}
+	
 };
 
 //Sticky sidebar
@@ -135,6 +144,7 @@ var asideElement = "#text-3";
 var aniDuration = 100;
 var useAnimation = true;
 	var offset = $(asideElement).offset();
+	console.log(offset.top);
 	var topPadding = 15;
 	$(window).scroll(function() {
 		try {
