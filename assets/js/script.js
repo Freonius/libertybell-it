@@ -189,6 +189,7 @@ $(document).ready(() => {
 	menuMaker();
 
 	// Slide in animation for book
+	checkIfInView();
 	$(window).on("scroll resize", checkIfInView);
 
 	//getTotalHeight();
