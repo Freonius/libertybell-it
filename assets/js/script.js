@@ -65,16 +65,6 @@ const menuMaker = () => {
 	}
 };
 
-const init = () => {
-	// Lazy load the images and the iframes
-	lazyLoad("iframe");
-	lazyLoad(".lazy");
-
-	// Nav
-	$("#menu").slicknav();
-	menuMaker();
-};
-
 // Slide in animation
 
 var $animation_elements = $('.animation-element');
@@ -121,7 +111,15 @@ try {
 }
 
 // OnLoad
-window.onload = init;
+$(document).ready(() => {
+	// Lazy load the images and the iframes
+	lazyLoad("iframe");
+	lazyLoad(".lazy");
+
+	// Nav
+	$("#menu").slicknav();
+	menuMaker();
+});
 
 //Sticky sidebar
 $(function() {
