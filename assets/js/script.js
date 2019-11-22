@@ -1,5 +1,3 @@
-console.log("1.1.1");
-
 // Lazy loader for images
 const lazyLoad = (selector) => {
 	let els = null;
@@ -42,11 +40,7 @@ const menuMaker = () => {
 	for (let i = 0; i < subMenus.length; i++) {
 		subMenus[i].parentNode.setAttribute("aria-haspopup", "true");
 	}
-	for (let i = 0; i < links.length; i++) {
-		links[i].addEventListener("focus", toggleFocus, true);
-		links[i].addEventListener("blur", toggleFocus, true);
-	}
-	let toggleFocus = () => {
+	const toggleFocus = () => {
 		let self = this;
 		// Move up through the ancestors of the current link until we hit .nav-menu.
 		while (-1 === self.className.indexOf("nav-menu")) {
@@ -62,6 +56,10 @@ const menuMaker = () => {
 			}
 			self = self.parentElement;
 		}
+	};
+	for (let i = 0; i < links.length; i++) {
+		links[i].addEventListener("focus", toggleFocus, true);
+		links[i].addEventListener("blur", toggleFocus, true);
 	}
 };
 
