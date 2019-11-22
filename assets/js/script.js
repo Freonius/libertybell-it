@@ -118,7 +118,7 @@ const stickySidebar = (id, footerId, aniDuration = 100) => {
 		console.log(`Footer height: ${footerHeight}`);
 		let elementHeight = $(id).outerHeight();
 		console.log(`Element height: ${elementHeight}`);
-		maxMargin = window.height - footerHeight - elementHeight - topPadding - 10;
+		maxMargin = window.height - footerHeight - elementHeight - topPadding - 10 - offset.top;
 	} catch (exception) {
 		console.log(exception);
 	}
@@ -128,9 +128,7 @@ const stickySidebar = (id, footerId, aniDuration = 100) => {
 	};
 
 	$(window).scroll(function() {
-		console.log(checkMax());
-		console.log(`Max margin: ${maxMargin}`);
-		if ($(window).scrollTop() > offset.top && checkMax()) {
+		if ($(window).scrollTop() > offset.top) {
 			let margin = 0;
 			if (checkMax()) {
 				margin = $(window).scrollTop() - offset.top + topPadding;
