@@ -1,3 +1,5 @@
+"use strict";
+
 // Lazy loader for images
 const lazyLoad = (selector) => {
 	let els = null;
@@ -108,7 +110,7 @@ const getTotalHeight = () => {
                        html.clientHeight, html.scrollHeight, html.offsetHeight);
 };
 
-const stickySidebar = (id, footerId, aniDuration = 100) => {
+const stickySidebar = (id, mainContentId, aniDuration = 100) => {
 	let useAnimation = aniDuration > 0;	// If the duration is 0, don't use animation
 	let topPadding = 15;
 	let maxMargin = 0;
@@ -116,8 +118,8 @@ const stickySidebar = (id, footerId, aniDuration = 100) => {
 
 	const calcMaxMargin = () => {
 		let elementHeight = $(id).innerHeight();
-		let mainHeight = $(footerId).innerHeight();
-		maxMargin = mainHeight - elementHeight - topPadding - 100 - screen.height;
+		let mainHeight = $(mainContentId).innerHeight();
+		maxMargin = mainHeight - elementHeight - topPadding;
 	};
 	calcMaxMargin();	// ensure it's called at least once
 	$(window).on("scroll resize", calcMaxMargin);
@@ -157,40 +159,6 @@ const stickySidebar = (id, footerId, aniDuration = 100) => {
 	});
 };
 
-//Sticky sidebar
-/*$(function() {
-var asideElement = "#text-3";
-var aniDuration = 100;
-var useAnimation = true;
-	var offset = $(asideElement).offset();
-	var topPadding = 15;
-	$(window).scroll(function() {
-		try {
-		if ($(window).scrollTop() > offset.top) {
-			if (useAnimation) {
-			$(asideElement).stop().animate({
-				marginTop: $(window).scrollTop() - offset.top + topPadding
-			}, aniDuration);
-		}
-		else {
-			$(asideElement).css("margin-top", ($(window).scrollTop() - offset.top + topPadding).toString() + "px");
-		}
-		} else {
-			if (useAnimation) {
-				$(asideElement).stop().animate({
-					marginTop: 0
-				}, aniDuration);
-			}
-			else {
-				$(asideElement).css("margin-top", "0px");
-			}
-		};
-	} catch (error) {
-			
-	}
-	});
-});*/
-
 //Facebook
 (function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
@@ -198,10 +166,8 @@ var useAnimation = true;
 	js = d.createElement(s); js.id = id;
 	js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
 	fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
+}(document, 'script', 'facebook-jssdk'));
 
-
-// Okay, didn't know it was this mess of a file, have to work on this
 // OnLoad
 $(document).ready(() => {
 	// Lazy load the images and the iframes
@@ -215,7 +181,7 @@ $(document).ready(() => {
 	// Slide in animation for book
 	$(window).on("scroll resize", checkIfInView);
 
-	getTotalHeight();
-	console.log(window.height);
+	//getTotalHeight();
+
 	stickySidebar("#text-3", "#main");
 });
