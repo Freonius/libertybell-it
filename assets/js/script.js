@@ -118,7 +118,7 @@ const stickySidebar = (id, footerId, aniDuration = 100) => {
 		console.log(`Footer height: ${footerHeight}`);
 		let elementHeight = $(id).outerHeight();
 		console.log(`Element height: ${elementHeight}`);
-		maxMargin = window.height - footerHeight - elementHeight - topPadding - 10 - offset.top;
+		maxMargin = footerHeight - elementHeight - topPadding - 10;
 	} catch (exception) {
 		console.log(exception);
 	}
@@ -218,5 +218,5 @@ $(document).ready(() => {
 
 	getTotalHeight();
 	console.log(window.height);
-	stickySidebar("#text-3", "#colophon");
+	stickySidebar("#text-3", "#main");
 });
