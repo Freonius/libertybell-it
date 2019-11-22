@@ -111,14 +111,14 @@ const getTotalHeight = () => {
 const stickySidebar = (id, footerId, aniDuration = 100) => {
 	let useAnimation = aniDuration > 0;	// If the duration is 0, don't use animation
 	let topPadding = 15;
-	let maxMargin = window.height;
+	let maxMargin = 0;
 	let offset = $(id).offset();
 	try {
 		let footerHeight = $(footerId).outerHeight();
 		console.log(`Footer height: ${footerHeight}`);
 		let elementHeight = $(id).outerHeight();
 		console.log(`Element height: ${elementHeight}`);
-		maxMargin = footerHeight - elementHeight - topPadding - 10;
+		maxMargin = footerHeight - (elementHeight * 2) - topPadding - 10;
 	} catch (exception) {
 		console.log(exception);
 	}
