@@ -64,6 +64,16 @@ $pages = array(
         "file" => "cookies.html",
         "css" => array()
     ),
+    "servizi-editoriali" => array(
+        "title" => "Servizi editoriali - Liberty Bell Edizioni",
+        "desc" => "Dal 2019 forniamo anche servizi editoriali a self-publishers e ad altre case editrici",
+        "keywords" => "servizi editoriali, self publishing, self publisher, copertine, editing, editing libro, impaginazione, copertine libro",
+        "google" => $google,
+        "cover" => "logo-square.png",
+        "sidebar" => false,
+        "file" => "servizi.html",
+        "css" => array()
+    ),
     "blog" => array(
         "title" => "Blog - Liberty Bell Edizioni",
         "desc" => "Articoli, curiosità e altro su storia e cultura americana",

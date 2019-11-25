@@ -13,6 +13,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://www.libertybell.it/servizi-editoriali/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2019-11-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://www.libertybell.it/libri/una-casa-divisa/</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2019-11-21</lastmod>
