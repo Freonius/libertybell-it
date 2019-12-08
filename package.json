@@ -1,0 +1,29 @@
+{
+  "name": "libertybell-it",
+  "version": "1.0.0",
+  "description": "Liberty Bell Edizioni's website",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Freonius/libertybell-it.git"
+  },
+  "author": "Fred Pirani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Freonius/libertybell-it/issues"
+  },
+  "homepage": "https://github.com/Freonius/libertybell-it#readme",
+  "devDependencies": {
+    "css-loader": "^3.2.1",
+    "html-loader": "^0.5.5",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
