@@ -1,0 +1,6 @@
+const quotes = [
+    {
+        quote: "",
+        by: ""
+    }
+];
