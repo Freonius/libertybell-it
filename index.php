@@ -208,6 +208,16 @@ $pages = array(
         "file" => "blog/wilson_in_italia.html",
         "css" => array()
     ),
+    "blog_la-mia-fuga-dalla-schiavitu" => array(
+        "title" => "La mia fuga dalla schiavitù, di Frederick Douglass - Liberty Bell Edizioni",
+        "desc" => "Nato schiavo in Maryland nel 1818, Frederick Douglass si guadagna la libertà nel modo descritto in questo articolo, pubblicato - per i motivi che spiega lui stesso - nel 1881, ben quarantatré anni dopo gli avvenimenti narrati.",
+        "keywords" => "douglass, frederick douglass, schiavitù, emancipazione",
+        "google" => $google,
+        "cover" => "blog/Douglass_cover.jpg",
+        "sidebar" => true,
+        "file" => "blog/douglass.html",
+        "css" => array()
+    ),
     // # HOME E 404
     "default" => array(
         "title" => "Liberty Bell Edizioni - Storia e cultura degli Stati Uniti",
