@@ -85,6 +85,19 @@ $pages = array(
         "css" => array()
     ),
     // # LIBRI
+    "libri_amequohi" => array(
+        // TODO: Amequohi
+        "title" => "Amequohi - Liberty Bell Edizioni",
+        "desc" => "Una raccolta di cinque racconti di grandi autori - Henry James, Mark Twain, Louisa May Alcott, Willa Cather, Charles W. Chesnutt - che offre uno spunto di riflessione sull’evento storico più tragico e determinante della storia americana: la Guerra Civile",
+        "keywords" => "racconti, guerra civile americana, classici, short stories, henry james, mark twain, louisa may alcott, willa cather, charles w chesnutt",
+        "google" => $google,
+        "cover" => "tw-all-Una_casa_divisa.jpg",
+        "sidebar" => false,
+        "file" => "amequohi.html",
+        "css" => array(
+            "https://fonts.googleapis.com/css?family=Alegreya+SC:500|Diplomata+SC&display=swap"
+        )
+    ),
     "libri_una-casa-divisa" => array(
         "title" => "Una casa divisa - Cinque racconti sulla Guerra Civile americana - Liberty Bell Edizioni",
         "desc" => "Una raccolta di cinque racconti di grandi autori - Henry James, Mark Twain, Louisa May Alcott, Willa Cather, Charles W. Chesnutt - che offre uno spunto di riflessione sull’evento storico più tragico e determinante della storia americana: la Guerra Civile",
@@ -306,12 +319,12 @@ $top = str_replace("{BCK}", $bcks[$br], $top);
 $top = str_replace("{QUOTE}", $quotes[$qr][1], $top);
 $top = str_replace("{QUOTEBY}", $quotes[$qr][0], $top);
 $top = str_replace("{REALADDR}", $http . "://" . $addr, $top);
-if ($array["sidebar"]) {
-    $top = str_replace("{SIDEBARCLASS}", "content-area col-lg-8 col-md-8 col-sm-8 col-xs-12", $top);
-}
-else {
-    $top = str_replace("{SIDEBARCLASS}", "content-area", $top);
-}
+// if ($array["sidebar"]) {
+//     $top = str_replace("{SIDEBARCLASS}", "content-area col-lg-8 col-md-8 col-sm-8 col-xs-12", $top);
+// }
+// else {
+$top = str_replace("{SIDEBARCLASS}", "content-area", $top);
+// }
 echo $top;
 // # Top End
 
@@ -360,15 +373,15 @@ MAILERLITE;
 
 include_once __DIR__ . "/assets/html/" . $array["file"];
 echo "</div><footer class=\"entry-footer\"></footer></article></main></div>";
-if ($array["sidebar"]) {
-    echo <<<SIDEBAR
-    <div id="secondary" class="widget-area col-lg-4 col-md-4 col-sm-4 col-xs-12" role="complementary">
-    <aside id="text-3" class="widget widget_text">
-    {$twitter_timeline}
-    {$mailerlite}
-    </aside></div><!-- #secondary -->
-SIDEBAR;
-}
+// if ($array["sidebar"]) {
+//     echo <<<SIDEBAR
+//     <div id="secondary" class="widget-area col-lg-4 col-md-4 col-sm-4 col-xs-12" role="complementary">
+//     <aside id="text-3" class="widget widget_text">
+//     {$twitter_timeline}
+//     {$mailerlite}
+//     </aside></div><!-- #secondary -->
+// SIDEBAR;
+// }
 $additional_css = "";
 foreach ($array["css"] as $css) {
     $additional_css .= "<link href=\"" . str_replace("|", "%7C", $css) . "\" rel=\"stylesheet\">";
