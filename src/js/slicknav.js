@@ -105,7 +105,7 @@ import $ from 'jquery';
     menuBar = $('<div class="' + prefix + '_menu"></div>');
     if (settings.brand !== '') {
       var brand = $(
-        '<div class="' + prefix + '_brand">' + settings.brand + '</div>'
+        '<div class="' + prefix + '_brand">' + settings.brand + '</div>',
       );
       $(menuBar).append(brand);
     }
@@ -125,7 +125,7 @@ import $ from 'jquery';
         '<span class="' + prefix + '_icon-bar"></span>',
         '</span>',
         '</' + settings.parentTag + '>',
-      ].join('')
+      ].join(''),
     );
     $(menuBar).append($this.btn);
     if (settings.appendTo !== '') {
@@ -169,7 +169,7 @@ import $ from 'jquery';
             settings.parentTag +
             ' role="menuitem" aria-haspopup="true" tabindex="-1" class="' +
             prefix +
-            '_item"/>'
+            '_item"/>',
         );
 
         // wrap item text with tag and add classes unless we are separating parent links
@@ -183,7 +183,7 @@ import $ from 'jquery';
         } else
           $(nodes)
             .wrapAll(
-              '<span class="' + prefix + '_parent-link ' + prefix + '_row"/>'
+              '<span class="' + prefix + '_parent-link ' + prefix + '_row"/>',
             )
             .parent();
 
@@ -203,7 +203,7 @@ import $ from 'jquery';
             (settings.showChildren
               ? settings.openedSymbol
               : settings.closedSymbol) +
-            '</span>'
+            '</span>',
         );
 
         if (
@@ -373,7 +373,7 @@ import $ from 'jquery';
     parent,
     animate,
     trigger,
-    init
+    init,
   ) {
     var $this = this;
     var settings = $this.settings;
@@ -423,7 +423,7 @@ import $ from 'jquery';
           settings.easingOpen,
           function () {
             afterOpen(trigger, parent);
-          }
+          },
         );
       } else if (settings.animations === 'velocity') {
         el.velocity('finish').velocity('slideDown', {
@@ -451,7 +451,7 @@ import $ from 'jquery';
           this.settings.easingClose,
           function () {
             afterClose(trigger, parent);
-          }
+          },
         );
       } else if (settings.animations === 'velocity') {
         el.velocity('finish').velocity('slideUp', {
@@ -569,7 +569,7 @@ import $ from 'jquery';
           // Call the method of our plugin instance, and pass it the supplied arguments.
           returns = instance[options].apply(
             instance,
-            Array.prototype.slice.call(args, 1)
+            Array.prototype.slice.call(args, 1),
           );
         }
       });

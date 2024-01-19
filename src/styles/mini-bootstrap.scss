@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+$breakpoint-bs1: 1200px;
+$breakpoint-bs2: 992px;
+$breakpoint-bs3: 768px;
+
+@media (min-width: $breakpoint-bs1) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (min-width: $breakpoint-bs2) and (max-width: #{$breakpoint-bs1 - 1px}) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: $breakpoint-bs3) and (max-width: #{$breakpoint-bs2 - 1px}) {
+    .container {
+        width: 750px;
+    }
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    //font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

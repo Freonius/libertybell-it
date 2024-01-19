@@ -1,5 +1,4 @@
 import $ from 'jquery';
-
 // ('use strict');
 
 // Lazy loader for images
@@ -16,7 +15,7 @@ const lazyLoad = (selector) => {
   }
   for (let i = 0; i < els.length; i++) {
     if (els[i].hasAttribute('data-src')) {
-      let src = els[i].getAttribute('data-src');
+      const src = els[i].getAttribute('data-src');
       if (els[i].classList.contains('set')) {
         els[i].setAttribute('srcset', src);
       } else {
@@ -29,10 +28,10 @@ const lazyLoad = (selector) => {
 // Slide in animation
 const checkIfInView = () => {
   let prev_pos = 0;
-  let animation_elements = $('.animation-element');
-  let window_height = $(window).height();
-  let window_top_position = $(window).scrollTop();
-  let window_bottom_position = window_top_position + window_height;
+  const animation_elements = $('.animation-element');
+  const window_height = window.height();
+  const window_top_position = window.scrollTop();
+  const window_bottom_position = window_top_position + window_height;
 
   let scrolling_down = false;
   if (window_top_position > prev_pos) {
@@ -43,15 +42,19 @@ const checkIfInView = () => {
   prev_pos = window_top_position;
   // eslint-disable-next-line no-unused-vars
   let i = 0;
-  $.each(animation_elements, function () {
+  $.each(animation_elements, () => {
     i++;
-    let $element = $(this);
-    let element_height = $element.outerHeight();
+    const $element = $(this);
+    const element_height = $element.outerHeight();
+    let element_top_position = null;
+    try {
+      element_top_position = $element.offset().top;
+    } catch (error) {
+      return;
+    }
 
-    let element_top_position = $element.offset().top;
-
-    let element_bottom_position = element_top_position + element_height * 0.7;
-    let inV =
+    const element_bottom_position = element_top_position + element_height * 0.7;
+    const inV =
       window_bottom_position > element_top_position + element_height * 0.3 &&
       window_top_position < element_bottom_position;
     element_top_position += element_height * 0.3;
@@ -119,7 +122,7 @@ const stickySidebar = (id, mainContentId, aniDuration = 100) => {
           {
             marginTop: margin,
           },
-          aniDuration
+          aniDuration,
         );
       } else {
         $(id).css('margin-top', margin.toString() + 'px');
@@ -130,7 +133,7 @@ const stickySidebar = (id, mainContentId, aniDuration = 100) => {
           {
             marginTop: 0,
           },
-          aniDuration
+          aniDuration,
         );
       } else {
         $(id).css('margin-top', '0px');
@@ -139,32 +142,30 @@ const stickySidebar = (id, mainContentId, aniDuration = 100) => {
   });
 };
 
-//Facebook
-(function (d, s, id) {
-  var js,
-    fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
-  fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'facebook-jssdk');
-
-// OnLoad
-$(document).ready(() => {
-  // Lazy load the images and the iframes
-  lazyLoad('iframe');
-  lazyLoad('.lazy');
-
-  // Nav
-
-  // $('#menu').slicknav();
-  // menuMaker();
-  // Slide in animation for book
-  checkIfInView();
-  $(window).on('scroll resize', checkIfInView);
-
-  //getTotalHeight();
-
-  stickySidebar('#text-3', '#main');
+document.onreadystatechange = function () {
+  if (document.readyState !== 'complete') {
+    $('#menu').slicknav();
+    // menuMaker();
+  }
+};
+window.addEventListener('load', function () {
+  window.cookieconsent.initialise({
+    palette: {
+      popup: {
+        background: '#eaf7f7',
+        text: '#5c7291',
+      },
+      button: {
+        background: '#56cbdb',
+        text: '#ffffff',
+      },
+    },
+    position: 'bottom',
+    content: {
+      message: 'Questo sito utilizza cookies. ',
+      dismiss: 'Ok, ricevuto',
+      link: 'Info.',
+      href: '/cookie-policy/',
+    },
+  });
 });
