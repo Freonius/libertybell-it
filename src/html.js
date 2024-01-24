@@ -13,15 +13,14 @@ export default function HTML(props) {
         />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <style dangerouslySetInnerHTML={{ __html: style }} /> */}
         <link rel="profile" href="http://gmpg.org/xfn/11" />
-        <meta
+        {/* <meta
           name="google-site-verification"
           content="0YsPh_i1pgE4f3dieJwG0wR1XMMkGywcRjKd7DAJ0GQ"
-        />
+        /> */}
         <title>Liberty Bell Edizioni</title>
 
-        <meta name="description" content="{DESCRIPTION}" />
+        {/* <meta name="description" content="{DESCRIPTION}" />
         <meta name="robots" content="{ROBOTS}" />
         <meta name="keywords" content="{KEYWORDS}" />
         <link rel="canonical" href="{REALADDR}/{CANON}" />
@@ -33,16 +32,14 @@ export default function HTML(props) {
         <meta property="og:site_name" content="Liberty Bell Edizioni" />
         <meta property="og:image" content="{REALADDR}/img/{COVER}" />
         <link rel="icon" href="/img/logo-square.png" sizes="32x32" />
-        <link rel="icon" href="/img/logo-square.png" sizes="192x192" />
+        <link rel="icon" href="/img/logo-square.png" sizes="192x192" /> */}
         <link rel="apple-touch-icon-precomposed" href="/img/logo-square.png" />
         <meta name="msapplication-TileImage" content="/img/logo-square.png" />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="Liberty Bell Edizioni &raquo; Feed"
-          href="/feed/"
-        />
-        <link rel="shortlink" href="http://www.libertybell.it/" />
+        <link rel="shortlink" href="https://www.libertybell.it/" />
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"
+          async="async"
+        ></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
@@ -54,35 +51,6 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
       </body>
-      {/* <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> */}
-      {/* <script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossOrigin="anonymous"
-      ></script> */}
-      <script
-        src="https://static.addtoany.com/menu/page.js"
-        async="async"
-      ></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"
-        async="async"
-      ></script>
-      {/* <!-- <script src="/assets/js/script.min.js" defer async="async"></script> --> */}
-      <script></script>
-      <script
-        async="async"
-        src="https://static.addtoany.com/menu/page.js"
-      ></script>
-      <link
-        rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"
-      />
-      <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-      {/* <script>
-        {() => {
-         
-      </script> */}
     </html>
   );
 }

@@ -1,0 +1,24 @@
+{
+    "unaCasaDivisa": {
+        "title": "Una Casa Divisa",
+        "subtitle": "Cinque racconti sulla Guerra Civile Americana",
+        "publicationDate": "2020",
+        "paperbackLinks": [
+            {
+                "store": "Amazon.it",
+                "link": "todo"
+            }
+        ],
+        "ebookLinks": [
+            {
+                "store": "Amazon Kindle",
+                "link": "todo"
+            }
+        ],
+        "isbns": {
+            "paperback": "978-88-0000-0000-0",
+            "ebook": "978-88-0000-0000-1"
+        },
+        "cover": "Una_casa_divisa"
+    }
+}

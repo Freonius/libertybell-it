@@ -1,32 +1,36 @@
 import React from 'react';
 import { BookBanner } from './BookBanner';
 import { StoreLink } from '../types';
+import Data from '../data/books.json';
 
 export function BookPage({
-  titleElement,
-  description,
-  title,
-  cover,
-  paperbackLinks,
-  ebookLinks,
-  publicationDate,
-  isbns,
-  subtitle = null,
+  children,
+  jsonKey,
 }: {
-  titleElement: React.ReactNode;
-  description: React.ReactNode;
-  title: string;
-  cover: string;
-  paperbackLinks: StoreLink[];
-  ebookLinks: StoreLink[];
-  publicationDate: string;
-  isbns: { paperback: string; ebook: string };
-  subtitle?: string | null;
+  children: React.ReactNode;
+  jsonKey: string;
 }) {
+  const {
+    title,
+    cover,
+    paperbackLinks,
+    ebookLinks,
+    publicationDate,
+    isbns,
+    subtitle,
+  }: {
+    title: string;
+    subtitle: string | null;
+    cover: string;
+    paperbackLinks: StoreLink[];
+    ebookLinks: StoreLink[];
+    publicationDate: string;
+    isbns: { paperback: string; ebook: string };
+  } = Data[jsonKey];
+
   return (
     <>
-      {titleElement}
-      {description}
+      {children}
       <BookBanner
         title={title}
         cover={cover}
@@ -39,12 +43,8 @@ export function BookPage({
         {` ${publicationDate}`}
         <br />
         <strong>ISBN:</strong>
-        {` ${isbns.paperback} (copertina flessibile) &#8211; ${isbns.ebook} (e-book)`}
+        {` ${isbns.paperback} (copertina flessibile) – ${isbns.ebook} (e-book)`}
       </p>
     </>
   );
 }
-
-BookPage.defaultProps = {
-  subtitle: null,
-};
