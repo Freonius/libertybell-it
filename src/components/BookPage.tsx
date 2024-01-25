@@ -10,6 +10,9 @@ export function BookPage({
   children: React.ReactNode;
   jsonKey: string;
 }) {
+  if (!Data[jsonKey]) {
+    return null;
+  }
   const {
     title,
     cover,

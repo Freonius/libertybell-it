@@ -56,7 +56,7 @@ export class NavBar extends React.Component {
                   </Link>
                 </li>
                 <li className="page_item">
-                  <Link to="/libri/del-49-cercatori-doro-altri-pionieri-california/">
+                  <Link to="/libri/noi-del-49-cercatori-doro-altri-pionieri-california/">
                     Noi del ‘49 &#8211; Cercatori d’oro e altri pionieri in
                     California
                   </Link>

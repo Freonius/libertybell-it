@@ -2,7 +2,7 @@ import React from 'react';
 import { BookPage, Dropcap, Layout } from '../../components';
 import { UnaCasaDivisaTitle } from '../../components/titles';
 
-export default function UnaCasaDivisa() {
+export default function Page() {
   return (
     <Layout>
       <BookPage jsonKey="unaCasaDivisa">
