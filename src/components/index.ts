@@ -7,6 +7,7 @@ import { Dropcap } from './Dropcap';
 import { BookBanner } from './BookBanner';
 import { BookPage } from './BookPage';
 import { BookForCatalogue } from './BookForCatalogue';
+import { Seo } from './Seo';
 
 export {
   NavBar,
@@ -18,4 +19,5 @@ export {
   BookBanner,
   BookPage,
   BookForCatalogue,
+  Seo,
 };
