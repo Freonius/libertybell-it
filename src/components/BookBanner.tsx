@@ -17,12 +17,12 @@ export function BookBanner({
   const fullTitle = title + (subtitle !== null ? `: ${subtitle}` : '');
   return (
     <div className="cntainer cnt2 cf bg-image-book">
-      <img
+      {/* <img
         className="bg"
         src={`/img/tmb350-${cover}.jpg`}
         alt={fullTitle}
         title={fullTitle}
-      />
+      /> */}
       <div className="animation-element slide-left testimonial">
         <div className="bk-cv">
           <img

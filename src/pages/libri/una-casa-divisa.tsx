@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookPage, Dropcap, Layout } from '../../components';
+import { BookPage, Dropcap, Layout, Seo } from '../../components';
 import { UnaCasaDivisaTitle } from '../../components/titles';
 
 export default function Page() {
@@ -38,4 +38,8 @@ export default function Page() {
       </BookPage>
     </Layout>
   );
+}
+
+export function Head() {
+  return <Seo title="Una casa divisa" description="" keywords={[]} />;
 }

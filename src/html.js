@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LogoSquare from './img/logo-square.png';
 
 export default function HTML(props) {
   return (
@@ -14,25 +15,21 @@ export default function HTML(props) {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
-        {/* <meta
-          name="google-site-verification"
-          content="0YsPh_i1pgE4f3dieJwG0wR1XMMkGywcRjKd7DAJ0GQ"
-        /> */}
-        <title>Liberty Bell Edizioni</title>
-
+        <link rel="icon" href={LogoSquare} sizes="32x32" />
+        <link rel="icon" href={LogoSquare} sizes="192x192" />
+        <link rel="apple-touch-icon-precomposed" href={LogoSquare} />
+        <meta name="msapplication-TileImage" content={LogoSquare} />
+        <meta property="og:locale" content="it_IT" />
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="{REALADDR}/{CANON}" /> */}
+        <meta property="og:site_name" content="Liberty Bell Edizioni" />
         {/* <meta name="description" content="{DESCRIPTION}" />
         <meta name="robots" content="{ROBOTS}" />
         <meta name="keywords" content="{KEYWORDS}" />
         <link rel="canonical" href="{REALADDR}/{CANON}" />
-        <meta property="og:locale" content="it_IT" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="{TITLE}" />
-        <meta property="og:description" content="{DESCRIPTION}" />
-        <meta property="og:url" content="{REALADDR}/{CANON}" />
-        <meta property="og:site_name" content="Liberty Bell Edizioni" />
-        <meta property="og:image" content="{REALADDR}/img/{COVER}" />
-        <link rel="icon" href="/img/logo-square.png" sizes="32x32" />
-        <link rel="icon" href="/img/logo-square.png" sizes="192x192" /> */}
+        
+        
+        <meta property="og:image" content="{REALADDR}/img/{COVER}" /> */}
         <link rel="apple-touch-icon-precomposed" href="/img/logo-square.png" />
         <meta name="msapplication-TileImage" content="/img/logo-square.png" />
         <link rel="shortlink" href="https://www.libertybell.it/" />

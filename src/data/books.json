@@ -2,22 +2,46 @@
     "unaCasaDivisa": {
         "title": "Una Casa Divisa",
         "subtitle": "Cinque racconti sulla Guerra Civile Americana",
-        "publicationDate": "2020",
+        "publicationDate": "8 novembre 2019",
         "paperbackLinks": [
             {
                 "store": "Amazon.it",
-                "link": "todo"
+                "link": "https://www.amazon.it/dp/8894487113"
+            },
+            {
+                "store": "Ibs.it",
+                "link": "https://www.ibs.it/casa-divisa-cinque-racconti-sulla-libro-vari/e/9788894487114"
             }
         ],
         "ebookLinks": [
             {
                 "store": "Amazon Kindle",
-                "link": "todo"
+                "link": "https://www.amazon.it/dp/B0816VSYNS"
+            },
+            {
+                "store": "Kobo",
+                "link": "https://www.kobo.com/it/it/ebook/una-casa-divisa"
+            },
+            {
+                "store": "Amazon Kindle",
+                "link": "https://www.amazon.it/dp/B0816VSYNS"
+            },
+            {
+                "store": "Google Play",
+                "link": "https://play.google.com/store/books/details/Henry_James_Una_casa_divisa?id=0sm8DwAAQBAJ"
+            },
+            {
+                "store": "Ibs.it",
+                "link": "https://www.ibs.it/casa-divisa-cinque-racconti-sulla-ebook-charles-w-chesnutt-henry-james/e/9788894487107"
+            },
+            {
+                "store": "Apple Books",
+                "link": "https://books.apple.com/it/book/una-casa-divisa/id1488544320"
             }
         ],
         "isbns": {
-            "paperback": "978-88-0000-0000-0",
-            "ebook": "978-88-0000-0000-1"
+            "paperback": "9788894487114",
+            "ebook": "9788894487107"
         },
         "cover": "Una_casa_divisa"
     }
